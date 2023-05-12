@@ -1,6 +1,13 @@
 # Tiny Histogram
 Tiny Histogram is a React-based web application that extracts the top 20 most frequently occurring words from a given paragraph of text and displays them in a histogram. It also allows users to download the histogram data as a CSV file.
 
+## Screenshots 
+- **screen 1** when first page will be loaded . once user click on submit button it move to next screen 
+![Screenshot1](https://drive.google.com/uc?export=view&id=1_mBYK6Ckchi3ydcXKHFuKhQn1npxC5jC)
+- **screen 2** containing export button to download csv file 
+![Screenshot2](https://drive.google.com/uc?export=view&id=1scUQ6MYLSGtPzccTfoXucmOQFBtZmUHE)
+
+
 ## Clone the Repo
 To clone this repository, run the following command in your terminal . 
 
