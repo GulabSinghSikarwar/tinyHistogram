@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Tiny Histogram
+Tiny Histogram is a React-based web application that extracts the top 20 most frequently occurring words from a given paragraph of text and displays them in a histogram. It also allows users to download the histogram data as a CSV file.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Clone the Repo
+To clone this repository, run the following command in your terminal . 
 
-## Available Scripts
+`git clone https://github.com/GulabSinghSikarwar/tinyHistogram.git`
+ 
+## Setup the React Project
 
-In the project directory, you can run:
+To set up the React project, navigate to the root directory of the project in your terminal and run the following command:
 
-### `npm start`
+`npm install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installing Library Dependency
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To install the necessary library dependency, run the following command:
 
-### `npm test`
+`npm install react-csv`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Explanation of Project Data
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Main Component: Tiny
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ The **`Tiny`** component is the main component of this project. It has two major functions: **`fetchData()`** and **`formatData()`**.
 
-### `npm run eject`
+-  **` fetchData()`**: This function is used to fetch the API and the response is fetched and converted to text format.
+- **`formatData()`**: This function is called to extract all the words and their frequency. The following tasks are performed in this function:
+  - It extracts all the words from the text paragraph using the **`split()`** method and passing a regular expression as an argument.
+  - Once all the words are obtained, an object **`{ word, frequency }`** is created containing the word and its frequency (its count).
+  - The first 20 elements with the highest frequency are sorted and sliced.
+Once the 20 distinct highest occurring words are obtained, the state of **`histagramData`** and **`isLoading`** is updated.
+  - Now, two components **`Histogram`** and **`HistogramBar`** are created to display the histogram and each bar of the histogram, respectively.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Exporting CSV File
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For exporting the CSV file, we have used the react-csv library. The following two objects are passed in this library:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Histogram data: The data for the histogram is passed.
+2. Headers: An array that represents the fields or columns in the CSV file. Each object in this array has two properties:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    - **`Label`**: It is the heading of the column in the CSV file.
+    - **`Property`**: It is the single object of the histogram object (word, frequency).
 
-## Learn More
+ Later, a csv object is created, which is then passed in the **`CSVLink`** tag. When the user clicks on this button, the CSV file starts downloading.
+ 
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The Tiny Histogram project is deployed on Firebase and can be accessed at the following link: [click here :  Firebase](https://assignments-7a03d.web.app/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Link :https://assignments-7a03d.web.app/.
 
-### Code Splitting
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
