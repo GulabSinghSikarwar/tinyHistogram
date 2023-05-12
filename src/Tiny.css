@@ -1,0 +1,26 @@
+.outer_container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* border: 1px solid black;
+    */
+
+}
+
+.button_containers {
+    display: flex;
+     
+
+    width:20%;
+    
+    margin-bottom: 10px;
+}
+.btn{
+    background-color: black;
+    color: white;
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+
+}
